@@ -8,14 +8,19 @@ namespace Model
 {
     class DBRepository : IRepository
     {
-        public bool Add(AnimalCard card)
+        public void Add(AnimalCard card)
         {
-            return true;
+            
         }
 
         public bool AddCardType(string cardName, AnimalCard.Type type)
         {
             return true;
+        }
+
+        public AnimalCard? Get(string cardName)
+        {
+            return null;
         }
 
         public string listAll()

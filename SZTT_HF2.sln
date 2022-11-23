@@ -5,11 +5,11 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SZTT_HF2", "SZTT_HF2\SZTT_HF2.csproj", "{BE804114-2DDF-4C4C-B7C4-BEA1CFCBC89A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{60137902-6FCB-4D73-9B0C-FA9290762E2C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "Model\DataAccessLayer.csproj", "{60137902-6FCB-4D73-9B0C-FA9290762E2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View", "View\View.csproj", "{C6CE1348-80AC-4409-B4D4-37572F465A15}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogicLayer", "View\BusinessLogicLayer.csproj", "{C6CE1348-80AC-4409-B4D4-37572F465A15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModel", "ViewModel\ViewModel.csproj", "{AC06BA77-7878-44FA-B948-75F00EB3447E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "ViewModel\UI.csproj", "{AC06BA77-7878-44FA-B948-75F00EB3447E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

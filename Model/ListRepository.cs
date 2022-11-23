@@ -9,17 +9,9 @@ namespace Model
     class ListRepository : IRepository
     {
         private List<AnimalCard> _repo = new List<AnimalCard>();
-        public bool Add(AnimalCard card)
+        public void Add(AnimalCard card)
         {
-            foreach (var i in _repo)
-            {
-                if (i.Name == card.Name)
-                {
-                    return false;
-                }
-            }
             _repo.Add(card);
-            return true;
         }
 
         public bool AddCardType(string cardName, AnimalCard.Type type)
@@ -33,6 +25,18 @@ namespace Model
                 }
             }
             return false;
+        }
+
+        public AnimalCard? Get(string cardName)
+        {
+            foreach (var i in _repo)
+            {
+                if (i.Name == cardName)
+                {
+                    return i;
+                }
+            }
+            return null;
         }
 
         public string listAll()
