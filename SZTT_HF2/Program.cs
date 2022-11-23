@@ -1,7 +1,17 @@
-﻿public class Program
+﻿namespace Program
 {
-    public static void Main(string[] args)
+    /// <summary>
+    /// The main class for the program.
+    /// </summary>
+    public class Program
     {
-        Console.WriteLine("Hello, World!");
+        /// <summary>
+        /// Main method to start the program.
+        /// </summary>
+        /// <param name="args"></param>
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("Hello, World!");
+        }
     }
 }
