@@ -1,6 +1,6 @@
-﻿namespace Model
+﻿namespace DataAccessLayer
 {
-    public interface IRepository
+    public interface IAnimalRepository
     {
         /// <summary>
         /// Add new card to the reporitory.

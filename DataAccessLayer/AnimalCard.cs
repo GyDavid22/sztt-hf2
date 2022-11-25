@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Model
+namespace DataAccessLayer
 {
     public class AnimalCard
     {
@@ -19,21 +19,32 @@ namespace Model
             { "fish", Type.FISH },
             { "mammal", Type.MAMMAL }
         };
-        public string Name { get; private set; }
-        public string LatinName { get; private set; }
-        public Type? AnimalTypeByEnum { private get; set; } = null;
+        public string Name { get; set; }
+        public string LatinName { get; set; }
+        private Type? _animalType = null;
         public string AnimalType
         {
             get
             {
-                if (AnimalTypeByEnum == null)
+                if (_animalType == null)
                 {
                     return "N/A";
                 }
                 // Warning disabled here because we already did the check.
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
-                return AnimalTypeByEnum.ToString().ToLower();
+                return _animalType.ToString().ToLower();
 #pragma warning restore CS8602 // Dereference of a possibly null reference.
+            }
+            set
+            {
+                if (StringToType.ContainsKey(value.ToLower()))
+                {
+                    _animalType = StringToType[value.ToLower()];
+                }
+                else
+                {
+                    throw new Exception("This type doesn't exist in this program. No changes were made.");
+                }
             }
         }
         public string ShortDesc { get; private set; }
@@ -45,6 +56,6 @@ namespace Model
             ShortDesc = shortDesc;
         }
 
-        public override string ToString() => $"{Name}, {LatinName}. Type: {AnimalType}, short description: {ShortDesc}";
+        public override string ToString() => $"{Name} # {LatinName} # {AnimalType} # {ShortDesc}";
     }
 }

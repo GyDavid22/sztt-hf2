@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Model
+namespace DataAccessLayer
 {
-    class DBRepository : IRepository
+    class DBAnimalRepository : IAnimalRepository
     {
         public void Add(AnimalCard card)
         {
