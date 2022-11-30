@@ -13,7 +13,7 @@ namespace DataAccessLayer
             
         }
 
-        public bool AddCardType(string cardName, AnimalCard.Type type)
+        public bool AddCardType(string cardName, string type)
         {
             return true;
         }

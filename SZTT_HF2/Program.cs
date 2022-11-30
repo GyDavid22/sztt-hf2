@@ -1,4 +1,6 @@
-﻿namespace Program
+﻿using UI;
+
+namespace Program
 {
     /// <summary>
     /// The main class for the program.
@@ -11,7 +13,7 @@
         /// <param name="args"></param>
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            UI.CLI.Cli();
         }
     }
 }

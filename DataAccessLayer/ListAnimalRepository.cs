@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
-    class ListAnimalRepository : IAnimalRepository
+    public class ListAnimalRepository : IAnimalRepository
     {
         private List<AnimalCard> _repo = new List<AnimalCard>();
         public void Add(AnimalCard card)
@@ -14,13 +14,13 @@ namespace DataAccessLayer
             _repo.Add(card);
         }
 
-        public bool AddCardType(string cardName, AnimalCard.Type type)
+        public bool AddCardType(string cardName, string type)
         {
             foreach (var i in _repo)
             {
-                if (i.Name == cardName)
+                if (i.Name == cardName && AnimalCard.StringToType.ContainsKey(type.ToLower()))
                 {
-                    i.AnimalTypeByEnum = type;
+                    i.AnimalType = type;
                     return true;
                 }
             }

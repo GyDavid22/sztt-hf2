@@ -14,7 +14,7 @@
         /// <param name="cardName">The name of the card which we would like to add a type to.</param>
         /// <param name="type">The type we would like to set.</param>
         /// <returns>True, if the process was successful, false otherwise.</returns>
-        public bool AddCardType(string cardName, AnimalCard.Type type);
+        public bool AddCardType(string cardName, string type);
         /// <summary>
         /// Remove an already existing card from the repository.
         /// </summary>

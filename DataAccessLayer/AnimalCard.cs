@@ -12,7 +12,7 @@ namespace DataAccessLayer
         {
             BIRD, REPTILE, FISH, MAMMAL
         }
-        public readonly Dictionary<string, Type> StringToType = new Dictionary<string, Type>()
+        public static readonly Dictionary<string, Type> StringToType = new Dictionary<string, Type>()
         {
             { "bird", Type.BIRD },
             { "reptile", Type.REPTILE },
