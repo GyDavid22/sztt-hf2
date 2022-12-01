@@ -14,17 +14,17 @@ namespace DataAccessLayer
             _repo.Add(card);
         }
 
-        public bool AddCardType(string cardName, string type)
+        public void AddCardType(string cardName, string type)
         {
             foreach (var i in _repo)
             {
                 if (i.Name == cardName && AnimalCard.StringToType.ContainsKey(type.ToLower()))
                 {
                     i.AnimalType = type;
-                    return true;
+                    return;
                 }
             }
-            return false;
+            throw new Exception("Unsupported type or misspelled name.");
         }
 
         public AnimalCard? Get(string cardName)
@@ -49,17 +49,17 @@ namespace DataAccessLayer
             return sb.ToString();
         }
 
-        public bool Remove(string cardName)
+        public void Remove(string cardName)
         {
             foreach (var i in _repo)
             {
                 if (i.Name == cardName)
                 {
-                    // Will be true all the time.
-                    return _repo.Remove(i);
+                    _repo.Remove(i);
+                    return;
                 }
             }
-            return false;
+            throw new Exception("Not found.");
         }
     }
 }

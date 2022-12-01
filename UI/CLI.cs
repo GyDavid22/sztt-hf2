@@ -1,11 +1,12 @@
-﻿using DataAccessLayer;
-using UI.Commands;
+﻿using UI.Commands;
+using BusinessLogicLayer;
+using DataAccessLayer;
 
 namespace UI
 {
     public class CLI
     {
-        private static IAnimalRepository _rep = new ListAnimalRepository(); 
+        private static View view = new View(new ListAnimalRepository(), new DictUserRepository()); 
         public static void Cli()
         {
             bool run = true;
@@ -16,9 +17,15 @@ namespace UI
                 if (command == null)
                     continue;
                 CommandBase? cmdObject = CommandManager.Instance.Get(command[0].ToLower());
-                bool result;
                 if (cmdObject != null)
-                    result = cmdObject.Execute(command, _rep);
+                    try
+                    {
+                        cmdObject.Execute(command, view);
+                    }
+                    catch (Exception e)
+                    {
+                        Console.Error.WriteLine(e.Message);
+                    }
                 else
                     switch (command[0].ToLower())
                     {

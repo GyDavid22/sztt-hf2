@@ -13,9 +13,9 @@ namespace DataAccessLayer
             
         }
 
-        public bool AddCardType(string cardName, string type)
+        public void AddCardType(string cardName, string type)
         {
-            return true;
+
         }
 
         public AnimalCard? Get(string cardName)
@@ -28,9 +28,9 @@ namespace DataAccessLayer
             return "";
         }
 
-        public bool Remove(string cardName)
+        public void Remove(string cardName)
         {
-            return true;
+
         }
     }
 }

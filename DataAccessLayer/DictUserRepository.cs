@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
-    class DictUserRepository : IUserRepository
+    public class DictUserRepository : IUserRepository
     {
         private Dictionary<int, string> _users = new Dictionary<int, string>()
         {

@@ -1,4 +1,5 @@
-﻿using DataAccessLayer;
+﻿using BusinessLogicLayer;
+using DataAccessLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,10 +15,9 @@ namespace UI.Commands
 
         }
 
-        public override bool Execute(string[] param, IAnimalRepository rep)
+        public override void Execute(string[] param, View view)
         {
-            rep.listAll();
-            return true;
+            Console.WriteLine(view.ListAll());
         }
     }
 }
