@@ -13,7 +13,9 @@ namespace UI
             while (run)
             {
                 Console.Write(">> ");
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
                 string[] command = Console.ReadLine().Split(" ");
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
                 if (command == null)
                     continue;
                 CommandBase? cmdObject = CommandManager.Instance.Get(command[0].ToLower());

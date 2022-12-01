@@ -1,10 +1,4 @@
-﻿using DataAccessLayer;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BusinessLogicLayer;
+﻿using BusinessLogicLayer;
 
 namespace UI.Commands
 {
@@ -20,7 +14,6 @@ namespace UI.Commands
         /// Interface method to execute a command.
         /// </summary>
         /// <param name="param">Array of strings which contains the command entered the CLI, including the first word, the command itself.</param>
-        /// <returns>True, if the execution was successful, false otherwise.</returns>
         public abstract void Execute(string[] param, View view);
     }
 }

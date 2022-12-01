@@ -32,21 +32,39 @@ namespace BusinessLogicLayer
             _animalRepository.Add(new AnimalCard(name, latinName, shortDesc));
         }
 
+        /// <summary>
+        /// Prints a line of log to the console.
+        /// </summary>
+        /// <param name="m">Type of the modification happened</param>
+        /// <param name="a">The affected AnimalCard object</param>
         public void LogToConsole(ModifyType m, AnimalCard a)
         {
             Console.WriteLine($"{m.ToString().Substring(0, 1).ToUpper() + m.ToString().Substring(1).ToLower()} of {a.Name} by {_userRepository.GetName(MultiUser.Instance.GetLoggedInUserId())}");
         }
 
+        /// <summary>
+        /// Lists all cards.
+        /// </summary>
+        /// <returns>A string containing all elements, divided by \n</returns>
         public string ListAll()
         {
             return _animalRepository.listAll();
         }
 
+        /// <summary>
+        /// Removes a card from the repository.
+        /// </summary>
+        /// <param name="name">Name of the card to remove</param>
         public void Remove(string name)
         {
             _animalRepository.Remove(name);
         }
 
+        /// <summary>
+        /// Adds/changes the type of the selected card.
+        /// </summary>
+        /// <param name="name">Name of the card to modify</param>
+        /// <param name="type">The type to set to the card</param>
         public void AddType(string name, string type)
         {
             _animalRepository.AddCardType(name, type);
