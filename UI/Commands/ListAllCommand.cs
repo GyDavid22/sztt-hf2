@@ -9,9 +9,9 @@ namespace UI.Commands
 
         }
 
-        public override void Execute(string[] param, AnimalBLL view)
+        public override void Execute(string[] param, AnimalBLL bll)
         {
-            Console.WriteLine(view.ListAll());
+            Console.WriteLine(bll.ListAll());
         }
     }
 }

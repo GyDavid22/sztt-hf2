@@ -58,7 +58,11 @@ namespace BusinessLogicLayer
         /// <param name="name">Name of the card to remove</param>
         public void Remove(string name)
         {
-            _animalRepository.Remove(name);
+            AnimalCard? card = _animalRepository.Get(name);
+            if (card != null)
+                _animalRepository.Remove(card);
+            else
+                throw new CardNotFoundException();
             LogToConsole(ModifyType.DELETION, name);
         }
 
@@ -69,7 +73,11 @@ namespace BusinessLogicLayer
         /// <param name="type">The type to set to the card</param>
         public void AddType(string name, string type)
         {
-            _animalRepository.AddCardType(name, type);
+            AnimalCard? card = _animalRepository.Get(name);
+            if (card != null)
+                _animalRepository.AddCardType(card, type);
+            else
+                throw new CardNotFoundException();
             LogToConsole(ModifyType.MODIFICATION, name);
         }
     }

@@ -9,7 +9,7 @@ namespace UI.Commands
         {
 
         }
-        public override void Execute(string[] param, AnimalBLL view)
+        public override void Execute(string[] param, AnimalBLL bll)
         {
             StringBuilder name = new StringBuilder();
             for (int i = 1; i < param.Length - 1; i++)
@@ -21,7 +21,7 @@ namespace UI.Commands
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
             string type = Console.ReadLine().ToLower();
 #pragma warning restore CS8602 // Dereference of a possibly null reference.
-            view.AddType(name.ToString(), type);
+            bll.AddType(name.ToString(), type);
         }
     }
 }

@@ -10,14 +10,14 @@
         /// <summary>
         /// Give type to an existing card.
         /// </summary>
-        /// <param name="cardName">The name of the card which we would like to add a type to.</param>
+        /// <param name="card">The card object which we would like to add a type to.</param>
         /// <param name="type">The type we would like to set.</param>
-        public void AddCardType(string cardName, string type);
+        public void AddCardType(AnimalCard card, string type);
         /// <summary>
         /// Remove an already existing card from the repository.
         /// </summary>
-        /// <param name="cardName">The name of the card to remove.</param>
-        public void Remove(string cardName);
+        /// <param name="card">The card object to remove.</param>
+        public void Remove(AnimalCard card);
         /// <summary>
         /// List all cards from the repository.
         /// </summary>

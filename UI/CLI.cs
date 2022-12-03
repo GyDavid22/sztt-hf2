@@ -7,7 +7,7 @@ namespace UI
 {
     public class CLI
     {
-        private static AnimalBLL view = new AnimalBLL(new ListAnimalRepository(), new DictUserRepository()); 
+        private static AnimalBLL bll = new AnimalBLL(new ListAnimalRepository(), new DictUserRepository()); 
         public static void Cli()
         {
             bool run = true;
@@ -23,10 +23,10 @@ namespace UI
                 if (cmdObject != null)
                     try
                     {
-                        cmdObject.Execute(command, view);
+                        cmdObject.Execute(command, bll);
                         if (cmdObject.Modifyer)
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
-                            CommandManager.Instance.Get("list").Execute(command, view);
+                            CommandManager.Instance.Get("list").Execute(command, bll);
 #pragma warning restore CS8602 // Dereference of a possibly null reference.
                     }
                     catch (Exception e)

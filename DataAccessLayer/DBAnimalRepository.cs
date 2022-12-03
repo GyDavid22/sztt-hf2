@@ -9,7 +9,7 @@ namespace DBRepository
             
         }
 
-        public void AddCardType(string cardName, string type)
+        public void AddCardType(AnimalCard card, string type)
         {
 
         }
@@ -24,7 +24,7 @@ namespace DBRepository
             return "";
         }
 
-        public void Remove(string cardName)
+        public void Remove(AnimalCard card)
         {
 
         }

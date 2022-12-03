@@ -9,7 +9,7 @@ namespace UI.Commands
         {
 
         }
-        public override void Execute(string[] param, AnimalBLL view)
+        public override void Execute(string[] param, AnimalBLL bll)
         {
             StringBuilder name = new StringBuilder();
             for (int i = 1; i < param.Length - 1; i++)
@@ -17,7 +17,7 @@ namespace UI.Commands
                 name.Append($"{param[i]} ");
             }
             name.Append(param[param.Length - 1]);
-            view.Remove(name.ToString());
+            bll.Remove(name.ToString());
         }
     }
 }

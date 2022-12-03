@@ -12,17 +12,9 @@ namespace ListRepository
             _repo.Add(card);
         }
 
-        public void AddCardType(string cardName, string type)
+        public void AddCardType(AnimalCard card, string type)
         {
-            foreach (var i in _repo)
-            {
-                if (i.Name == cardName && AnimalCard.StringToType.ContainsKey(type.ToLower()))
-                {
-                    i.AnimalType = type;
-                    return;
-                }
-            }
-            throw new Exception("Unsupported type or misspelled name.");
+            card.AnimalType = type;
         }
 
         public AnimalCard? Get(string cardName)
@@ -47,17 +39,9 @@ namespace ListRepository
             return sb.ToString();
         }
 
-        public void Remove(string cardName)
+        public void Remove(AnimalCard card)
         {
-            foreach (var i in _repo)
-            {
-                if (i.Name == cardName)
-                {
-                    _repo.Remove(i);
-                    return;
-                }
-            }
-            throw new Exception("Not found.");
+            _repo.Remove(card);
         }
     }
 }
