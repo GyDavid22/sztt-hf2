@@ -4,12 +4,12 @@ namespace UI.Commands
 {
     public class ListAllCommand : CommandBase
     {
-        public ListAllCommand() : base("list")
+        public ListAllCommand() : base("list", false)
         {
 
         }
 
-        public override void Execute(string[] param, View view)
+        public override void Execute(string[] param, AnimalBLL view)
         {
             Console.WriteLine(view.ListAll());
         }

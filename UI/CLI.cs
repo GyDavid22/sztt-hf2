@@ -1,12 +1,13 @@
 ﻿using UI.Commands;
 using BusinessLogicLayer;
 using DataAccessLayer;
+using ListRepository;
 
 namespace UI
 {
     public class CLI
     {
-        private static View view = new View(new ListAnimalRepository(), new DictUserRepository()); 
+        private static AnimalBLL view = new AnimalBLL(new ListAnimalRepository(), new DictUserRepository()); 
         public static void Cli()
         {
             bool run = true;
@@ -23,6 +24,10 @@ namespace UI
                     try
                     {
                         cmdObject.Execute(command, view);
+                        if (cmdObject.Modifyer)
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
+                            CommandManager.Instance.Get("list").Execute(command, view);
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
                     }
                     catch (Exception e)
                     {

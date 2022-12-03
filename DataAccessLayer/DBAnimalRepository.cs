@@ -1,4 +1,6 @@
-﻿namespace DataAccessLayer
+﻿using DataAccessLayer;
+
+namespace DBRepository
 {
     class DBAnimalRepository : IAnimalRepository
     {

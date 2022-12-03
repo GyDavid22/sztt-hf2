@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
-namespace DataAccessLayer
+using DataAccessLayer;
+
+namespace ListRepository
 {
     public class ListAnimalRepository : IAnimalRepository
     {

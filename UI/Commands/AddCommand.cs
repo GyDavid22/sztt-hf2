@@ -4,12 +4,12 @@ namespace UI.Commands
 {
     public class AddCommand : CommandBase
     {
-        public AddCommand() : base("add")
+        public AddCommand() : base("add", true)
         {
 
         }
 
-        public override void Execute(string[] param, View view)
+        public override void Execute(string[] param, AnimalBLL view)
         {
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             Console.Write("Name: ");

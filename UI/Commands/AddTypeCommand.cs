@@ -5,11 +5,11 @@ namespace UI.Commands
 {
     public class AddTypeCommand : CommandBase
     {
-        public AddTypeCommand() : base("addtype")
+        public AddTypeCommand() : base("addtype", true)
         {
 
         }
-        public override void Execute(string[] param, View view)
+        public override void Execute(string[] param, AnimalBLL view)
         {
             StringBuilder name = new StringBuilder();
             for (int i = 1; i < param.Length - 1; i++)

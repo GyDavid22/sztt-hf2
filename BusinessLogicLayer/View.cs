@@ -2,7 +2,7 @@
 
 namespace BusinessLogicLayer
 {
-    public class View
+    public class AnimalBLL
     {
         private IAnimalRepository _animalRepository;
         private IUserRepository _userRepository;
@@ -12,7 +12,7 @@ namespace BusinessLogicLayer
             CREATION, MODIFICATION, DELETION
         }
 
-        public View(IAnimalRepository animalRepository, IUserRepository userRepository)
+        public AnimalBLL(IAnimalRepository animalRepository, IUserRepository userRepository)
         {
             this._animalRepository = animalRepository;
             this._userRepository = userRepository;
@@ -30,16 +30,17 @@ namespace BusinessLogicLayer
                 throw new Exception("A card already exists with this name or the given details don't meet the criterias.");
             }
             _animalRepository.Add(new AnimalCard(name, latinName, shortDesc));
+            LogToConsole(ModifyType.CREATION, name);
         }
 
         /// <summary>
         /// Prints a line of log to the console.
         /// </summary>
         /// <param name="m">Type of the modification happened</param>
-        /// <param name="a">The affected AnimalCard object</param>
-        public void LogToConsole(ModifyType m, AnimalCard a)
+        /// <param name="name">The name of the affected AnimalCard</param>
+        public void LogToConsole(ModifyType m, string name)
         {
-            Console.WriteLine($"{m.ToString().Substring(0, 1).ToUpper() + m.ToString().Substring(1).ToLower()} of {a.Name} by {_userRepository.GetName(MultiUser.Instance.GetLoggedInUserId())}");
+            Console.WriteLine($"{m.ToString().Substring(0, 1).ToUpper() + m.ToString().Substring(1).ToLower()} of {name} by {_userRepository.GetName(MultiUser.Instance.GetLoggedInUserId())}");
         }
 
         /// <summary>
@@ -58,6 +59,7 @@ namespace BusinessLogicLayer
         public void Remove(string name)
         {
             _animalRepository.Remove(name);
+            LogToConsole(ModifyType.DELETION, name);
         }
 
         /// <summary>
@@ -68,6 +70,7 @@ namespace BusinessLogicLayer
         public void AddType(string name, string type)
         {
             _animalRepository.AddCardType(name, type);
+            LogToConsole(ModifyType.MODIFICATION, name);
         }
     }
 }
