@@ -1,0 +1,14 @@
+add
+Dog
+Canis lupus familiaris
+They say they are humans' best friend.
+add
+Cat
+Felis catus
+Another popular pet.
+add
+Budgie
+Melopsittacus undulatus
+The budgerigar (/ˈbʌdʒərɪˌɡɑːr, -əriː-/ BUJ-ər-ih-gar, -⁠ə-ree-; Melopsittacus undulatus), also known as the common parakeet or shell parakeet, is a small, long-tailed, seed-eating parrot usually nicknamed the budgie (/ˈbʌdʒi/ BUJ-ee), or in American English, the parakeet. Budgies are the only species in the genus Melopsittacus. Naturally, the species is green and yellow with black, scalloped markings on the nape, back, and wings. Budgies are bred in captivity with colouring of blues, whites, yellows, greys, and even with small crests. Juveniles and chicks are monomorphic, while adults are told apart by their cere colouring, and their behaviour. (source: Wikipedia)
+del Dog
+exit

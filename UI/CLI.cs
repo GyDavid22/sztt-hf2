@@ -14,11 +14,14 @@ namespace UI
             while (run)
             {
                 Console.Write(">> ");
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
-                string[] command = Console.ReadLine().Split(" ");
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
-                if (command == null)
-                    continue;
+                string[] command;
+                string line;
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
+                if ((line = Console.ReadLine()) == null)
+                    break;
+                else
+                    command = line.Split(" ");
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
                 CommandBase? cmdObject = CommandManager.Instance.Get(command[0]);
                 if (cmdObject != null)
                     try
