@@ -5,7 +5,7 @@ namespace UI.Commands
 {
     public class DeleteCommand : CommandBase
     {
-        public DeleteCommand() : base("del", true)
+        public DeleteCommand() : base(true)
         {
 
         }

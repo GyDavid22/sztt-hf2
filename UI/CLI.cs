@@ -19,7 +19,7 @@ namespace UI
 #pragma warning restore CS8602 // Dereference of a possibly null reference.
                 if (command == null)
                     continue;
-                CommandBase? cmdObject = CommandManager.Instance.Get(command[0].ToLower());
+                CommandBase? cmdObject = CommandManager.Instance.Get(command[0]);
                 if (cmdObject != null)
                     try
                     {

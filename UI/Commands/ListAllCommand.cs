@@ -4,7 +4,7 @@ namespace UI.Commands
 {
     public class ListAllCommand : CommandBase
     {
-        public ListAllCommand() : base("list", false)
+        public ListAllCommand() : base(false)
         {
 
         }
