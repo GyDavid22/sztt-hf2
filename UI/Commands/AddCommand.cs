@@ -4,7 +4,7 @@ namespace UI.Commands
 {
     public class AddCommand : CommandBase
     {
-        public AddCommand() : base("add", true)
+        public AddCommand() : base(true)
         {
 
         }

@@ -4,11 +4,9 @@ namespace UI.Commands
 {
     public abstract class CommandBase
     {
-        public string Name { private set; get; }
         public bool Modifyer { private set; get; }
-        public CommandBase(string name, bool modifyer)
+        public CommandBase(bool modifyer)
         {
-            Name = name;
             Modifyer = modifyer;
         }
 
